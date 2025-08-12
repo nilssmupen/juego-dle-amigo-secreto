@@ -11,13 +11,16 @@ function Asignaciondetexto(elemento , texto) {
 }   
     // Click a añadir y agragarlo a la lista
 function agregarAmigo(){
-    let inputAmigos =   document.querySelector("#amigo").textContent
-if (inputAmigos=="") {
-    Asignaciondetexto("h2" , "vamos bien aldair")
-}
+    let inputAmigos =   document.querySelector("#amigo").value
+if (amigos.includes(inputAmigos)) {return agregarAmigo()
+
+} else {
+    amigos.push(inputAmigos);
+    return inputAmigos
 }
 
-
+}
+console.log (amigos)
 
 // funciones y asignaciones
 
