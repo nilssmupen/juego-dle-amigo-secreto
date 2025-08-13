@@ -28,15 +28,29 @@ function agregarAmigo(){
         return
     }
 
-     amigos.push(inputAmigos)
-
-    Asignaciondetexto("ul" , amigos)
+    amigos.push(inputAmigos)
+    actualizarLista()
 
    limpiarcaja()
     return 
     
 }
 
+function actualizarLista() {
+    // Limpia 
+
+    let lista = document.querySelector("ul");
+    lista.innerHTML = "";  
+
+    // por cada nombre crea un "il"  
+    
+    amigos.forEach(nombre => {
+        let li = document.createElement("li");
+        li.textContent = nombre;
+        lista.appendChild(li);
+    }
+    );
+}
     // limpiar la caja de input
 function limpiarcaja() {
     document.querySelector("#amigo").value = ""
