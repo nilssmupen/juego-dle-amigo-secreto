@@ -2,6 +2,7 @@
 
 // variables
 let amigos = []
+
 // Funciones
     // Asignar un texto diferente    
 function Asignaciondetexto(elemento , texto) {
@@ -9,13 +10,20 @@ function Asignaciondetexto(elemento , texto) {
     textoHTML.innerHTML = texto
 }   
     //Click y sortea amigos
-
-
+function sortearAmigo() {
+        // tener un numero pseudoaleatorio y llamar al elmento html
+       
+        let numeroAleatorio = Math.floor(Math.random()* amigos.length)
+        Asignaciondetexto("#resultado" , `Tu amigo secreto es ${amigos[numeroAleatorio]} `)
+        
+       return 
+}
+    
     // Click a añadir y agragarlo a la lista
 function agregarAmigo(){
     console.log(amigos)
     console.log(amigos.length)
-        
+    
     let inputAmigos =   document.querySelector("#amigo").value
 
     if (amigos.includes(inputAmigos)) {
@@ -29,6 +37,7 @@ function agregarAmigo(){
     }
 
     amigos.push(inputAmigos)
+    
     actualizarLista()
 
    limpiarcaja()
@@ -43,7 +52,7 @@ function actualizarLista() {
     lista.innerHTML = "";  
 
     // por cada nombre crea un "il"  
-    
+
     amigos.forEach(nombre => {
         let li = document.createElement("li");
         li.textContent = nombre;
