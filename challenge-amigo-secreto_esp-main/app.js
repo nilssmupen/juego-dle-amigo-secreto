@@ -15,6 +15,8 @@ function sortearAmigo() {
        
         let numeroAleatorio = Math.floor(Math.random()* amigos.length)
         Asignaciondetexto("#resultado" , `Tu amigo secreto es ${amigos[numeroAleatorio]} `)
+        let listaLimpia= document.querySelector("ul")
+        listaLimpia.innerHTML = ""
         
        return 
 }
@@ -61,7 +63,7 @@ function actualizarLista() {
     );
 }
     // limpiar la caja de input
-function limpiarcaja() {
+function limpiarcaja(elemetode) {
     document.querySelector("#amigo").value = ""
     Asignaciondetexto("h2" , "Digite el nombre de sus amigos")
 }
